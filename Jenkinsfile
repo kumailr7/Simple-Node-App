@@ -31,7 +31,7 @@ pipeline {
 
         stage('Login in the Container Registry'){
             steps {
-                sh "echo $docker_PSW | docker login registry.gitlab.com -u $docker_USR --password-stdin"
+                sh "echo $docker_PSW | docker login -u $docker_USR --password-stdin"
             }
         }
 
