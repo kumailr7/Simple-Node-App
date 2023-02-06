@@ -21,5 +21,29 @@ pipeline {
                 sh './kill.sh'
             }
         }
+
+        stage('Build the image') {
+            steps {
+                sh "docker build -t kumail/node-app:$BUILD_NUMBER"
+            }
+        }
+
+        stage('push the image'){
+            steps {
+                sh "docker push kumail/node-app:$BUILD_NUMBER"
+            }
+        }
+
+        stage("Deploying the application") {
+            steps {
+                sh "docker compose up -d"
+            }
+        }
+
+        stage("Delete the image") {
+            steps {
+                sh "docker rmi -f kumail/node-app:$BUILD_NUMBER"
+            }
+        }
     }
 }
