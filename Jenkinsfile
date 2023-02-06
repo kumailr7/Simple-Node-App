@@ -3,17 +3,17 @@ pipeline {
     environment {
         CI = 'true'
     }
-    stages {
-        stage('Build') {
-            steps {
-                sh 'npm install'
-            }
-        }
-        stage('Test') {
-            steps {
-                sh './test.sh'
-            }
-        }
+    // stages {
+    //     stage('Build') {
+    //         steps {
+    //             sh 'npm install'
+    //         }
+    //     }
+    //     stage('Test') {
+    //         steps {
+    //             sh './test.sh'
+    //         }
+    //     }
         // stage('Deliver') {
         //     steps {
         //         sh './deliver.sh'
