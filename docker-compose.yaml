@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  frontend-qa:
+    restart: always
+    image: kumail/node-app:$BUILD_NUMBER
+    ports:
+      - 3002:3002
+
