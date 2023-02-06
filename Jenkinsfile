@@ -37,7 +37,7 @@ pipeline {
 
         stage('tagging the image') {
             steps {
-                sh "docker tag kumail/node-app:$BUILD_NUMBER kumail7/dockerhub$BUILD_NUMBER:"
+                sh "docker tag kumail/node-app:$BUILD_NUMBER kumail7/dockerhub:$BUILD_NUMBER:"
             }
         }
 
