@@ -29,7 +29,7 @@ pipeline {
             }
         }
 
-        Stage('Login in the Container Registry'){
+        stage('Login in the Container Registry'){
             steps {
                 sh "echo $docker_PSW | docker login registry.gitlab.com -u $docker_USR --password-stdin"
             }
