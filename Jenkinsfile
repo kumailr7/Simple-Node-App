@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         CI = 'true'
-        gitlab=credentials('gitlab')
+        docker=credentials('docker')
     }
     stages {
     //     stage('Build') {
@@ -31,7 +31,7 @@ pipeline {
 
         Stage('Login in the Container Registry'){
             steps {
-                sh "echo $gitlab_PSW | docker login registry.gitlab.com -u $gitlab_USR --password-stdin"
+                sh "echo $docker_PSW | docker login registry.gitlab.com -u $docker_USR --password-stdin"
             }
         }
 
