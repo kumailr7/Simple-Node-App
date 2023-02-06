@@ -10,5 +10,5 @@ app.get('/', (request, response) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Server is up on localhost:${PORT}`);
+  console.log(`Server is up on 192.168.10.12:${PORT}`);
 });
