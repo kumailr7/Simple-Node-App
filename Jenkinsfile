@@ -24,7 +24,7 @@ pipeline {
 
         stage('Build the image') {
             steps {
-                sh "docker build -t kumail/node-app:$BUILD_NUMBER"
+                sh "docker build -t kumail/node-app:$BUILD_NUMBER ."
             }
         }
 
