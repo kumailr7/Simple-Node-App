@@ -35,6 +35,12 @@ pipeline {
             }
         }
 
+        stage('tagging the image') {
+            steps {
+                sh "docker tag kumail/node-app:$BUILD_NUMBER kumail7/dockerhub$BUILD_NUMBER:"
+            }
+        }
+
         stage('push the image'){
             steps {
                 sh "docker push kumail/node-app:$BUILD_NUMBER"
