@@ -3,7 +3,7 @@ pipeline {
     environment {
         CI = 'true'
     }
-    // stages {
+    stages {
     //     stage('Build') {
     //         steps {
     //             sh 'npm install'
