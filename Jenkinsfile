@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         CI = 'true'
+        gitlab=credentials('gitlab')
     }
     stages {
     //     stage('Build') {
@@ -25,6 +26,12 @@ pipeline {
         stage('Build the image') {
             steps {
                 sh "docker build -t kumail/node-app:$BUILD_NUMBER ."
+            }
+        }
+
+        Stage('Login in the Container Registry'){
+            steps {
+                sh "echo $gitlab_PSW | docker login registry.gitlab.com -u $gitlab_USR --password-stdin"
             }
         }
 
