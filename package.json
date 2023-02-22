@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha"
-    "sonar": "sonar-scanner"
+    "sonar": "sonar"
   },
   "keywords": [],
   "author": "",
